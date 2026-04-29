@@ -1,0 +1,28 @@
+---
+title: "Basin-level municipal water withdrawal data preparation"
+---
+
+# Objective
++ To prepare the basin-level municipal water withdrawal data for 2019. 
++ Specifically, I will allocate the country-level municipal water withdrawal volumes from Aquastat data to the 235 global river basins using the country $\times$ basin level municipal water withdrawal data from GCAM.
+
+# Main Data
+
++ `nonirrigation_withdrawal.csv` + Each row corresponds to the combination of ISO country and GCAM basin. So, the same basin can appear multiple countries. 
+  + we will use column `Municipal` 
+
+```{r}
+#| label: load-data
+
+# Load the country-basin correspondence data
+tbl_basin_to_country <- fread(here("Data/Raw/gcam/water/basin_to_country_mapping.csv"))
+
+# Load the Aquastat municipal water withdrawal data
+aquastat_municipal_withdrawal <- 
+  fread(here("Data/Raw/aquastat/AQUASTAT_water_withdrawal_by_sector_18_22.csv")) %>%
+  .[Variable == "Municipal water withdrawal" & Year == 2019]
+
+# Load the nonirrigation withdrawal data
+nonirrigation_withdrawal <- fread(here("Data/Raw/gcam/water/nonirrigation_withdrawal.csv"))
+
+```
