@@ -1,0 +1,74 @@
+---
+title: "Plan for Data Preparation"
+---
+
+# To be read:
++ "About The state of desalination and brine production: A global outlook. Science of the Total Environment"
++ 
+
+# Analysis
++ Replacement cost approach
++ Basin-level analysis (235 global river basins)
+
+# Data 
+
+For the main data, we will use datasets from the Global Change Analysis Model (GCAM). The github repository for GCAM water data is [here](https://github.com/JGCRI/gcam-core/tree/master/input/gcamdata/inst/extdata/water). I installed the GCAM water data package, go to DownGit and paste the link to the water data folder in the GCAM repository.  
+
+
+## Main datasets
+### River basin information
++ `basin_to_couinty_mapping.csv` - Basin assigned to the country which has the largest basin area.
+
+### 
++ `A71.globaltech_cost.csv` - Desalination non-energy costs (1975$ per cubic meter of desalinated water (1975$/m3))
++ `superwell_groundwater_cost_elec_dls.csv` - Groundwater nonrenewable resource curves with capital costs disaggregated from electricity (pumping) requirements. Includes both energy and nonenergy costs. Costs and depth bins are processed from superwell output. elec_coef = electric_energy / (Well_Yield * Annual_Operation_time). costs in 1975USD per m3; available in km3; elec_coef in kwh per m3; depletion limits in percent
+
++ 
+
+
+
++ The FAO Aquastat data in GCAM water data package only contains data up to 2017. More recent data was downloaded from the FAO Aquastat website. The following datasets were downloaded:
+  + Municipal water withdrawal (2018-2022)   
+  + Desalinated water produced (2018-2022)
+
++ 
+
+## **Maybe helpful?**
++  `AusNWC_desal_techs.csv` -  the technology shares of desalinated water production by continent.
++  `DesalData_capacity_basin.csv` - Desalinated water production capacity by basin
+
+
+# Process:
+## The information we need
+1. Basin-level water withdrawal volumes for municipal water use
+2. The share of the basin-level water withdrawal volumes for municipal water use by source (surface water, groundwater, desalinated water, etc.). 
+3.  
+ 
+
+
+## Steps
++ Derive basin-level water withdrawal volumes for municipal water use (2018) by 
+
+
+# Overview
+## Map of the 235 global river basins
+
+```{r}
+# --- Basin-country correspondence --- #
+tbl_basin_to_country <- fread(here("Data/raw/gcam/water/basin_to_country_mapping.csv"))
+
+
+# --- Country boundary --- #
+ctry_bd <- st_read(here("Data/raw/Boundary/z_ee_r250_correspondence.gpkg"), quiet = TRUE)
+
+# --- Basin boundary --- #
+basin_bd <- st_read(here("Data/raw/Boundary/gcam_235_basins.gpkg"), quiet = TRUE)
+
+
+# --- map of major river basin --- #
+ggplot() +
+  geom_sf(data = ctry_bd, color = "red") +
+  geom_sf(data = basin_bd, fill = "steelblue", alpha = 0.5)
+```
+
+

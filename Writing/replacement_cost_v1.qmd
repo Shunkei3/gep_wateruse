@@ -1,0 +1,84 @@
+---
+title: "Evaluating nature's water provisioning service to municipal water use"
+format:
+  docx:
+    reference-doc: word_template_noindent.docx
+    toc: false
+    toc-depth: 3
+    number-sections: false
+    colorlinks: true
+bibliography: ../../../2_Water.bib
+# csl: science-without-titles.csl
+execute:
+  cache: false
+  echo: false
+  message: false
+  error: false
+---
+
+# Questions:
++ List of available water resources for each country
++ Some countries generate freshwater from non-nature process: disalination (e.g., Saudi Arabia, Israel, Spain, etc.). 
++ A replacement-cost framework estimates the value of the water provisioning service as an input to the supply system, usually by asking what it would cost to replace that natural input with the least-cost alternative. It does not directly estimate the contribution of raw water to economic activity. Those are different objects.
++ Different questions:
+  + What cost does nature save the water-supply system by providing raw water? (replacement cost)
+  + How much of the value of treated/distributed water production is attributable to raw water as a production input?
+  + How much of the value of household economic activity is attributable to the water provisioning service? 
+
+# Introduction
+
+
+
+# Data and Methodology
+
+## Methodology
+
+### How to implement the replacement cost method for water provisioning service to municipal water use?
+
+
+### Cautions:
+
+The following assumptions need to be made [@Young.Loomis2014]
+
+1. the alternative must provide the same or equivalent good or service
+2. the alternative must be the least cost alternative way to provide this equivalent good or service
+3. there must be clear evidence that the services would be demanded from the higher cost alternative
+4. it must verify that the higher cost alternative would actually be constructed in the absence of the project under consideration.
+
++ The last point is also highlighted by SEEA guidance (e.g., [Valuation of Ecosystem Services: https://seea.un.org/sites/seea.un.org/files/2.2.1_valuation_of_ecosystem_services.pdf])
+
+
+
+## Data
++ Residual Value or Production Function
+  + @GarciaSuarez.etal2019
++ FAO Aquastat: has the following data, but most of them are not available. 
+  + Water withdrawal by sector (available)
+  + Water withdrawal by source  (No data available)
+    + Municipal freshwater withdrawal (total)
+    + Municipal fresh groundwater withdrawal (self-abstracted)
+    + Desalinated water for municipalities
+    + Freshwater withdrawal by water supply entity
+    + Freshwater withdrawal by households (self-abstracted)
+
+
++ FAO Aquastat: 
+  + SDG indicator 6.4.2: level of water stress: the share of a country's available renewable freshwater resources that is being withdrawn for human use. 
+  + Maybe, we can use this data to select the countries to focus on. 
+
+
++ Water utilities data:
+  + Urban water blueprint: https://water.nature.org/waterblueprint/#/section=overview
+    + The website provides water sources   
+  + City Water Map: https://wbwaterdata.org/dataset/city-water-map
+
++ Population that has access to safely managed drinking-water services
+  + unicef: [Drinking water, sanitation and hygiene in hoiuseholds by country](https://data.unicef.org/topic/water-and-sanitation/drinking-water/?utm_source=chatgpt.com)
+
++ UN GEMStat: Global Freshwater Quality: https://gemstat.org/data-gemstat/data-portal/
+  + Data is available from [Zenodo](https://zenodo.org/records/18459694) 
+
++ Gridded Population of the World (GPW): https://www.earthdata.nasa.gov/data/projects/gpw
+
++ per capita household water use
+  + th UN and the WHO used a figure of 20 L/day per person as the minimum human requirement for water for drinking and basic sanitation [@Hanemann2006] 
