@@ -10,6 +10,14 @@ This script aggregates the **shared-flow-path** replacement results from step 8 
 ## 1. Read the city results and country identifiers
 
 ```{r}
+#| label: setup
+library(data.table)
+library(here)
+library(sf)
+library(magrittr)
+```
+
+```{r}
 
 analysis_dir <- here("Data/Analysis")
 result_dir <- here("Data/Results")
