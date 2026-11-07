@@ -422,6 +422,8 @@ final_gep_report_detailed <-
       wateruse_municipal_gep = replacement_value_2019usd_year,
       missing_value_reason
     )
+  ][
+    order(iso3_r250_id)
   ]
 
 fwrite(
